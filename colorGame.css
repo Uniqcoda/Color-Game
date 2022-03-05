@@ -1,74 +1,131 @@
 body {
-	background-color: #232323;
-	margin: 0;
-	font-family: "Montserrat", "Avenir";
+    background-color: #232323;
+    margin: 0;
+    font-family: 'Montserrat', 'Avenir';
 }
 
-.circle {
-	width: 30%;
-	background: purple;
-	padding-bottom: 30%;
-	float: left;
-	margin: 1.66%;
-	border-radius: 100%;
-	transition: background 0.8s;
-	-webkit-transition: background 0.8s;
-	-moz-transition: background 0.8s;
-}
-
-#container {
-	margin: 20px auto;
-	max-width: 600px;
-}
-
-h1 {
-	text-align: center;
-	line-height: 1.1;
-	font-weight: normal;
-	color: white;
-	background: steelblue;
-	margin: 0;
-	text-transform: uppercase;
-	padding: 20px 0;
+h2 {
+    text-align: center;
+    font-weight: normal;
+    color: white;
+    background: steelblue;
+    margin: 0;
+    text-transform: uppercase;
+    padding: 20px 0;
 }
 
 #colorDisplay {
-	font-size: 200%;
+    font-size: 200%;
 }
 
 #message {
-	display: inline-block;
-	width: 20%;
+    display: inline-block;
+    width: 20%;
 }
 
-#stripe {
-	background: white;
-	height: 30px;
-	text-align: center;
-	color: black;
+.stripe {
+    background: white;
+    height: 30px;
+    text-align: center;
+    color: black;
+}
+
+.tips-button {
+    margin-left: 5px;
 }
 
 .selected {
-	color: white;
-	background: steelblue;
+    color: white;
+    background: steelblue;
 }
 
 button {
-	border: none;
-	background: none;
-	text-transform: uppercase;
-	height: 100%;
-	font-weight: 700;
-	color: steelblue;
-	letter-spacing: 1px;
-	font-size: inherit;
-	transition: all 0.3s;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	outline: none;
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    height: 100%;
+    font-weight: 700;
+    color: steelblue;
+    letter-spacing: 1px;
+    font-size: inherit;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    outline: none;
 }
 
 button:hover {
-	color: white;
-	background: steelblue;
+    color: white;
+    background: steelblue;
+    cursor: pointer;
+}
+
+.circle {
+    background: rgb(231, 230, 230);
+    height: 120px;
+    border-radius: 50%;
+    transition: background 0.8s;
+    -webkit-transition: background 0.8s;
+    -moz-transition: background 0.8s;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.circles-container {
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 120px 120px 120px;
+    column-gap: 15px;
+    row-gap: 15px;
+}
+
+.tips-container {
+    margin-top: 20px;
+    border-radius: 100%;
+    width: 80%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.tips {
+    color: steelblue;
+    max-width: 500px;
+}
+
+.tips-container img {
+    height: 160px;
+    border-radius: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+    .circle {
+        height: 160px;
+    }
+    .circles-container {
+        grid-template-columns: 160px 160px 160px;
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    .tips-container img {
+        height: 250px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .circle {
+        height: 180px;
+    }
+    .circles-container {
+        grid-template-columns: 180px 180px 180px;
+    }
+    .tips-container img {
+        height: 300px;
+    }
 }

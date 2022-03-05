@@ -4,13 +4,16 @@ let pickedColor;
 let circles = document.querySelectorAll('.circle');
 let colorDisplay = document.getElementById('colorDisplay');
 let messageDisplay = document.querySelector('#message');
-let h1 = document.querySelector('h1');
+let h2 = document.querySelector('h2');
 let resetButton = document.querySelector('#reset');
 let modeButtons = document.querySelectorAll('.mode');
+let tipsButton = document.querySelector('.tips-button');
+let tipsContainer = document.querySelector('.tips-container');
 
 function init() {
     setupModeButtons();
     setupCircles();
+    displayTips();
     reset();
 }
 
@@ -37,7 +40,7 @@ function setupCircles() {
                 messageDisplay.textContent = 'Correct!';
                 resetButton.textContent = 'Play Again?';
                 changeColors(clickedColor);
-                h1.style['background-color'] = clickedColor;
+                h2.style['background-color'] = clickedColor;
             } else {
                 this.style['background-color'] = '#232323';
                 messageDisplay.textContent = 'Try Again';
@@ -63,7 +66,7 @@ function reset() {
             circles[i].style.display = 'none';
         }
     }
-    h1.style['background-color'] = 'steelblue';
+    h2.style['background-color'] = 'steelblue';
 }
 
 resetButton.addEventListener('click', function () {
@@ -103,6 +106,19 @@ function randomColor() {
     //pick a "blue" from  0 -255
     let b = Math.floor(Math.random() * 256);
     return 'rgb(' + r + ', ' + g + ', ' + b + ')';
+}
+
+function displayTips() {
+    //add click listeners to tips button
+    tipsButton.addEventListener('click', function () {
+        if (tipsContainer.style.display === 'none' || tipsContainer.style.display === '') {
+            tipsContainer.style.display = 'flex';
+            tipsButton.textContent = 'Hide Tips?';
+        } else {
+            tipsContainer.style.display = 'none';
+            tipsButton.textContent = 'Show Tips?';
+        }
+    });
 }
 
 init();
