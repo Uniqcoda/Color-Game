@@ -11,27 +11,26 @@ h2 {
     background: steelblue;
     margin: 0;
     text-transform: uppercase;
-    padding: 20px 0;
+    padding: 20px 10px;
+    font-size: 80%;
 }
 
 #colorDisplay {
-    font-size: 200%;
+    font-size: 160%;
 }
 
 #message {
     display: inline-block;
-    width: 20%;
+    width: 50px;
+    font-weight: 500;
 }
 
 .stripe {
     background: white;
-    height: 30px;
+    padding: 5px 10px;
     text-align: center;
     color: black;
-}
-
-.tips-button {
-    margin-left: 5px;
+    font-size: 60%;
 }
 
 .selected {
@@ -60,9 +59,18 @@ button:hover {
     cursor: pointer;
 }
 
+.circles-container {
+    margin: 10px auto;
+    /* padding: 10px; */
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    column-gap: 15px;
+    row-gap: 15px;
+}
+
 .circle {
     background: rgb(231, 230, 230);
-    height: 120px;
+    height: 100px;
     border-radius: 50%;
     transition: background 0.8s;
     -webkit-transition: background 0.8s;
@@ -72,21 +80,14 @@ button:hover {
 .container {
     display: flex;
     justify-content: center;
-}
-
-.circles-container {
-    margin: 20px auto;
-    display: grid;
-    grid-template-columns: 120px 120px 120px;
-    column-gap: 15px;
-    row-gap: 15px;
+    padding: 20px;
 }
 
 .tips-container {
-    margin-top: 20px;
+    margin: 10px 0;
     border-radius: 100%;
-    width: 80%;
     display: none;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding: 10px 20px;
@@ -94,38 +95,112 @@ button:hover {
     background-color: white;
 }
 
-.tips {
+.tips-container .tips {
     color: steelblue;
-    max-width: 500px;
+    font-size: 80%;
 }
 
 .tips-container img {
-    height: 160px;
-    border-radius: 20px;
+    height: 140px;
 }
 
 @media only screen and (min-width: 600px) {
-    .circle {
-        height: 160px;
+    h2 {
+        padding: 20px 10px;
+        font-size: 90%;
     }
+
+    #colorDisplay {
+        font-size: 180%;
+    }
+
+    #message {
+        width: 70px;
+    }
+
+    .stripe {
+        padding: 5px 10px;
+        font-size: 80%;
+    }
+
+    .circle {
+        height: 140px;
+    }
+
     .circles-container {
-        grid-template-columns: 160px 160px 160px;
+        grid-template-columns: 140px 140px 140px;
         column-gap: 20px;
         row-gap: 20px;
     }
+
     .tips-container img {
-        height: 250px;
+        height: 160px;
+    }
+
+    .tips-container .tips {
+        max-width: 300px;
     }
 }
 
 @media only screen and (min-width: 768px) {
-    .circle {
+    h2 {
+        padding: 30px 10px;
+        font-size: 100%;
+    }
+
+    #colorDisplay {
+        font-size: 200%;
+    }
+
+    #message {
+        width: 80px;
+    }
+
+    .stripe {
+        font-size: 100%;
+    }
+
+    .tips-container img {
         height: 180px;
     }
-    .circles-container {
-        grid-template-columns: 180px 180px 180px;
+
+    .tips-container .tips {
+        max-width: 500px;
+        font-size: 90%;
     }
+}
+
+@media only screen and (min-width: 1200px) {
+    h2 {
+        padding: 40px 10px;
+        font-size: 150%;
+    }
+
+    #colorDisplay {
+        font-size: 250%;
+    }
+
+    #message {
+        width: 100px;
+    }
+
+    .circle {
+        height: 160px;
+    }
+
+    .circles-container {
+        margin: 30px auto;
+        grid-template-columns: 160px 160px 160px;
+        column-gap: 30px;
+        row-gap: 30px;
+    }
+
     .tips-container img {
-        height: 300px;
+        height: 220px;
+    }
+
+    .tips-container .tips {
+        max-width: 500px;
+        font-size: 100%;
     }
 }
